@@ -1,0 +1,1 @@
+<iframe id="viewwebsite" src="<?php echo base_url() ?>"></iframe>

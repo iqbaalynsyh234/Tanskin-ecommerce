@@ -1,0 +1,50 @@
+@media (max-width: 768px){
+	.best_offer{
+		.wrapper{
+			display: -ms-flexbox;
+		    display: flex;
+		    -ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		    margin-right: -7.5px;
+		    margin-left: -7.5px;
+		}
+		.offer{
+			-ms-flex: 0 0 50%;
+		    flex: 0 0 50%;
+		    max-width: 50%;
+		    padding-right: 7.5px;
+		    padding-left: 7.5px;
+		}
+		.offer_carousel{
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-bottom: 15px;
+		}
+	}
+	#catalog-slider{
+		margin-bottom: 15px;
+	}
+	.int-cart{
+	    top: 0px;
+	}
+	.wrap-menu-footer {
+	    margin-bottom: 30px;
+	}
+	.mt-xs-3{
+		margin-top: 3rem;
+	}
+	.nav-menu-mobile.pull-left li {
+	    padding-left: 15px;
+	    padding-right: 0px;
+	}
+	.navbar-fixed-top {
+	    .navbar-header{
+	    	box-shadow: 0px 2px 10px rgba(204, 204, 204, .8);
+	    }
+	}
+	
+	
+	.navbar-header{
+		padding-bottom: 15px;
+	}
+}
