@@ -15,13 +15,13 @@ use Xendit\Xendit;
 
 require "vendor/autoload.php";
 
-Xendit::setApiKey("xnd_development_Fk1cp5fjeHPz67EkKF79XpwHaZ2VozhsmmeHIxISCNjdqMT8s37UoFXRe1pOj");
+Xendit::setApiKey("xnd_production_0fe7ZApI47qHxBMYkQZq8r8sGISgzCFhjdInJ3Vma9ZMfgG4vMTA2lNArdWM3");
 
 $params = [
     "external_id" => "demo_147580196270",
     "payer_email" => "sample_email@xendit.co",
-    "description" => "Trip to Bali",
-    "amount" => 4000,
+    "description" => "Tanskin Toner",
+    "amount" => 70000000,
 ];
 
 $createInvoice = \Xendit\Invoice::create($params);

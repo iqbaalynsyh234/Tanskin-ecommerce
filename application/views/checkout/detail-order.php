@@ -54,11 +54,11 @@
                 <tr>
                 <th colspan="3">
                     
-                    <label><a href="javascript:void(0);" class="have-voucher">Have voucher code ? tes</a></label>
+                    <label><a href="javascript:void(0);" class="have-voucher">Have voucher code ?</a></label>
                     <div class="input-group hidden yes-i-have-vou" style="width: 100%">
                     <input type="text" class="form-control">
                     <span class="input-group-btn">
-                    <button type="button" class="btn btn-info btn-flat">Use the voucher klik</button>
+                    <button type="button" class="btn btn-info btn-flat">Use the voucher klik here!</button>
                     </span>
                     </div>                   
                      

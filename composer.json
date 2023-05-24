@@ -13,7 +13,7 @@
 	"require": {
 		"php": ">=5.2.4",
 		"xendit/xendit-php": "^2.19",
-		"guzzlehttp/guzzle": "^7.5",
+		"guzzlehttp/guzzle": "^7",
 		"firebase/php-jwt": "^6.4",
 		"endroid/qr-code": "^4.6",
 		"picqer/php-barcode-generator": "^2.2"

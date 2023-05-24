@@ -1,3 +1,15 @@
+
+<?php
+  require 'vendor/autoload.php';
+
+  use Xendit\Xendit;
+
+  Xendit::setApiKey('xnd_production_0fe7ZApI47qHxBMYkQZq8r8sGISgzCFhjdInJ3Vma9ZMfgG4vMTA2lNArdWM3');
+
+  $sql = "SELECT * FROM payment_xendit";
+
+ ?>
+
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/select2/select2.min.css">
 <style type="text/css">
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -11,6 +23,7 @@
     border: 1px solid #ccc;
 }
 </style>
+
 <div id="my-wrapper-background">
 <div class="container" style="height: 100%;">
     <form id="payment_midtrans" class="form-horizontal row" action="<?php echo base_url('snap/token') ?>" method="post" style="height: 100%;">
@@ -103,10 +116,21 @@
         <span class="load-detail-order">
         </span>
         
+        <th colspan="3">
+                    
+          <label><a href="javascript:void(0);" class="have-voucher">Have voucher code ?</a></label>
+            <div class="input-group hidden yes-i-have-vou" style="width: 100%">
+            <input type="text" class="form-control">
+              <span class="input-group-btn">
+                  <button type="button" class="btn btn-info btn-flat" id ="use">Use the voucher klik here!</button>
+              </span>
+             </div>                             
+        </th>
+
         <div class="box-cart-footer">
         <hr>
         <?php if(strtoupper($this->session->userdata('ship_ship')) != "PRICE NOT FOUND.") { ?>
-        <button id="submitdata-01" type="button" name="confirm" value="confirm" class="btn btn-info" <?php echo $buybutton ?>>Pembayaran <span class="if-register"></span></button>
+        <button id="submitdata-01" type="button" name="confirm" value="confirm" class="btn btn-info" <?php echo $buybutton ?>>Pembayaran<span class="if-register"></span></button>
         <?php } ?>
         </div>
         </div>
@@ -118,6 +142,99 @@
     <input type="hidden" name="result_type" id="result-type" value=""></div>
     <input type="hidden" name="result_data" id="result-data" value=""></div>
 </form>
+
+<script>
+  function GetVoucherlist(){
+    
+  }
+</script>
+
+<script>
+  function init_voucher(vou){
+  var err  = $('#value--vou-error');
+    $.ajax({
+        url: base_url + "checkout/getwhatis",
+        type: "POST",
+        cache: false,
+        data: 'whatis=' + vou,
+        dataType:'json',
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        success: function(json){
+            if(json.status == '1'){
+              $("#loading").addClass('show');
+              location.reload();
+            }
+            if(json.status == '0'){
+              err.html(json.message)
+            }
+        }
+    });
+}
+
+</script>
+
+<script>
+  // Get the elements
+var voucherInput = document.querySelector('.input-group input');
+var useButton = document.getElementById('use');
+
+// Add event listener to the button
+useButton.addEventListener('click', function() {
+  // Get the voucher code entered by the user
+  var voucherCode = voucherInput.value.trim();
+  
+  // Validate the voucher code (add your own validation logic here)
+  if (voucherCode === '') {
+    alert('Please enter a voucher code.');
+    return;
+  }
+  
+  // Apply the voucher code and reduce the payment amount
+  // Add your own logic here to calculate the discounted payment amount
+  
+  // Example: Assume the payment amount is stored in a variable called paymentAmount
+  // and the voucher discount is stored in a variable called voucherDiscount
+  
+  // Calculate the new payment amount after applying the voucher discount
+  var newPaymentAmount = paymentAmount - voucherDiscount;
+  
+  // Display the new payment amount to the user (replace this with your own code)
+  alert('Payment amount after applying the voucher: ' + newPaymentAmount);
+});
+
+</script>
+
+<script>
+  $('body').on('click', '.have-voucher', function(){
+        $('.yes-i-have-vou').toggleClass('use');
+    });
+    
+    $('body').on('click', '#vou-sub', function(e){
+        var code = $('.value--vou').val(),
+            err  = $('#value--vou-error');
+        if(! code){
+            err.html('This field is required.');
+        }else{
+            init_voucher(code);
+        }
+        e.preventDefault();
+    });
+
+    $('body').on('click', '#vou-del', function(e){
+        window.location.href = base_url + 'checkout/delete_voucher';
+    });
+
+    $('body').on('keyup keydown', '.value--vou', function(){
+        var code = $(this).val(),
+            err  = $('#value--vou-error');
+        if(! code){
+            err.html('This field is required.');
+        }else{
+            err.html('');
+        }
+    });
+</script>
+</script>
 
 <script src="<?php echo base_url() ?>assets/plugins/select2/select2.full.min.js"></script>
 <script type="text/javascript">

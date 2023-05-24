@@ -45,7 +45,7 @@ else{
   justify-content: center;
   height: 100%;
   font-size: 25px;
-  color: #ffffff;
+  color: #050000;
 }
 .fab-options {
   list-style-type: none;
@@ -68,6 +68,7 @@ else{
   justify-content: flex-start;
   padding: 5px;
 }
+
 .fab-label {
   padding: 2px 5px;
   align-self: center;
@@ -81,17 +82,13 @@ else{
   margin-left: 10px;
 }
 
-
 </style>
 
 <!-- ========CALL CENTER CONTACT========== -->
 <div class="fab-container">
     <div class="fab fab-icon-holder" style="background-color:#FFF; padding:5px">
-	<?php
- 
-       echo "<img src='call.png' >"; 
-
-     ?> 
+	<div class="fab-icon-holder" style="background-color: #5865F2;">
+    <i class="fab fa-instagram"></i>
     </div>
     <ul class="fab-options">
       <li>
@@ -110,7 +107,7 @@ else{
       </li>
       <li>
         <a href="https://www.tiktok.com/@valsyahh_?_t=8Yyh1RapBNy&_r=1" class="text-decoration-none" target="_blank">
-          <div class="fab-icon-holder" style="background-color: #5865F2;">
+		<div class="fab-icon-holder" style="background-color: #5865F2;">
             <i class="fab fa-tiktok"></i>
           </div>
         </a>
@@ -120,12 +117,7 @@ else{
     <i class="fas fa-angle-up mt-2"></i>
     </a>
   </div>
-
-<!-- <div class="floating-wa">
-	<a href="<?php echo link_WA(get_data('store')['no_telp'], 'Hi TANSKIN') ?>" target="_blank">
-		<!-- <i class="fab fa-whatsapp"></i> -->
-	</a>
-</div> -->
+</div> 
 <div class="container">
 <div class="row">
 	<div class="col-xs-12 col-sm-12 col-md-12">
@@ -254,6 +246,12 @@ else{
 					<?php foreach(get_data('social_media', array('type' => 1), TRUE) AS $key => $value){ ?>
 						<li class="px-1"><a href="<?php echo $value['url'] ?>" target="_blank"><span class="icon <?php echo $value['socialmedia'] ?> d-block"></span></a></li>
 					<?php } ?>
+				</ul>
+				<?php if(count(get_data('social_media', array('type' => 1), TRUE)) > 0){ ?>
+					<h5 style="margin-top: 0px;" class="method-payment"><b>DENGAN BERBAGAI METODE PEMBAYARAN:</b></h5>
+                 <?php } ?>
+				<ul class="footer-payment">
+				<img src="assets/image/logo/payment.png" style="height:80px;">
 				</ul>
 				</div>
 		</div>

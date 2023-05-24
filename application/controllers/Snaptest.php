@@ -22,10 +22,10 @@ class Snaptest extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $params = array('server_key' => 'SB-Mid-server-SNpwckJZg9mjPA60BNX5WL4b', 'production' => false);
-		$this->load->library('midtrans');
+		$this->load->library('xendit');
 		$this->midtrans->config($params);
-		$this->load->helper('url');	
+		$this->load->helper('url');
+		$this->load->model(array('checkout/m_checkout'));	
     }
 
     public function index()

@@ -62,7 +62,7 @@
         </div>
         
         <div class="form-group">
-            <div class="col-sm-3 col-md-3 text-right"><b>Metode Pengiriman :</b></div>
+            <div class="col-sm-3 col-md-3 text-right"><b>Metode Pengiriman 123:</b></div>
             <div class="col-sm-9 col-md-6">
                 <b><?php echo strtoupper($this->session->userdata('ship_ship')) ?></b>
             </div>

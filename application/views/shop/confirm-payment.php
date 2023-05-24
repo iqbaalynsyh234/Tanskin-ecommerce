@@ -1,3 +1,14 @@
+<?php
+require 'vendor/autoload.php';
+
+use Xendit\Xendit;
+
+Xendit::setApiKey('xnd_production_0fe7ZApI47qHxBMYkQZq8r8sGISgzCFhjdInJ3Vma9ZMfgG4vMTA2lNArdWM3');
+
+$sql = "SELECT * FROM payment_xendit";
+
+?>
+
 <?php echo $script_captcha; ?>
 
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/select2/select2.min.css">
@@ -126,7 +137,7 @@
             </select>
         </div>
         <div class="form-group">
-            <input type="text" name="account" class="form-control" placeholder="Nama pemilik rekening">
+            <input type="text" name="account" class="form-control" placeholder="Nama pemilik rekening" name="external_id">
         </div>
         <div class="form-group">
             <label>Jumlah Pembayaran</label>

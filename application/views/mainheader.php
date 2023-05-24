@@ -8,7 +8,23 @@ else
   $alert_status = ''; $alert_message = '';
 }
 ?>
+<style>
+  #menu-list li {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
 
+#menu-list li.d-none {
+  display: none;
+}
+
+#menu-list li:not(.d-none) {
+  opacity: 1;
+  transform: translateY(0);
+
+}
+</style>
 <div class="status-alert-view <?php echo $alert_status ?>">
 <span>
 <?php echo $alert_message; ?>
@@ -143,10 +159,23 @@ if($this->uri->segment(1) == 'checkout'){
         ACCOUNT
         <?php } ?>
   </div></a></li>
-  <?php $menu = select_all_row("category", array('publish' => '11', 'parent_id' => 0));
-  foreach ($menu as $key => $value) { ?>
-    <li class="li-one"><a href="<?php echo base_url('shop/catalogue/'.$value['link']) ?>"><div><?php echo strtoupper($value['kategori']) ?></div></a></li>
-  <?php } ?>
+  
+  <ul class="menu-one">
+  <li class="li-one">PRODUCT CATEGORY
+  <i class="fa fa-caret-down" id="toggle-button"></i>
+  <a href="<?php echo base_url('shop/catalogue/') ?>"><div>
+  <?php
+    $menu = select_all_row("category", array('publish' => '11', 'parent_id' => 0));
+  ?>
+
+  <ul id="menu-list">
+    <?php foreach ($menu as $key => $value) { ?>
+      <li class="li-one">
+        <a href="<?php echo base_url('shop/catalogue/'.$value['link']) ?>"><div><?php echo strtoupper($value['kategori']) ?></div></a>
+      </li>
+    <?php } ?>
+  </ul>
+
   <?php if($this->session->userdata('login') == true){ ?>
     <li class="li-one"><a href="<?php echo base_url('shop/logout') ?>"><div>KELUAR</div></a></li>
   <?php } ?>
@@ -155,6 +184,22 @@ if($this->uri->segment(1) == 'checkout'){
 </div>
 
 </script> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  $("#menu-list li").each(function(index) {
+    $(this).delay(index * 200).queue(function() {
+      $(this).removeClass("d-none").dequeue();
+    });
+  });
+});
+
+$("#toggle-button").click(function() {
+  $("#menu-list li").each(function(index) {
+    $(this).toggleClass("d-none");
+  });
+});
+</script>
 <?php 
 }
 ?>

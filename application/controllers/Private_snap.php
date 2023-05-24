@@ -22,8 +22,7 @@ class Private_snap extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $params = array('server_key' => setting_value('midtrans_serverkey'), 'production' => true);
-		$this->load->library(array('midtrans','session'));
+		$this->load->library(array('xendit-php','session'));
 		$this->midtrans->config($params);
 		$this->load->helper('form','url','function');
 		$this->load->model(array('checkout/m_checkout'));	

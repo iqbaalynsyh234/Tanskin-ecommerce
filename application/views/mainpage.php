@@ -86,6 +86,7 @@ endif;
 <?php echo $footer ?>
 </section>	
 </section>
+
 <script type="text/javascript">
 //function alert
 function alert_notification(type, message){
@@ -95,6 +96,12 @@ function alert_notification(type, message){
   }
 }
 
+$('.dropdown').click(function(){
+  $('.nav-arrow').removeClass('fa-angle-down');
+  $('.nav-arrow').removeClass('fa-angle-left');
+  $(this).find('.nav-arrow').removeClass('fa-angle-left');
+  $(this).find('.nav-arrow').addClass('fa-angle-down');
+ });
 
 $(function(){
 var RightHeight  = parseInt(window.innerHeight)-476;
@@ -106,6 +113,20 @@ $('.item-content-right').css('min-height', LeftHight);
 $('.item-content-right').css('min-height', RightHeight);
 
 }
+});
+</script>
+
+<script>
+// JavaScript code
+var dropdown = document.getElementById("dropdown-menu");
+
+dropdown.addEventListener("change", function() {
+  var selectedOption = dropdown.options[dropdown.selectedIndex];
+  var selectedValue = selectedOption.value;
+  
+  // Perform any actions based on the selected value
+  console.log("Selected value:", selectedValue);
+  // You can add more logic here based on the selected value
 });
 </script>
 
