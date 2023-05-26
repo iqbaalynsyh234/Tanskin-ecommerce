@@ -107,7 +107,7 @@ else{
       <li>
         <a href="https://www.tiktok.com/@tanskinofficial?_t=8cHJDUGdiEi&_r=1" class="text-decoration-none" target="_blank">
           <div class="fab-icon-holder" style="background-color: black;">
-            <i class='bi bi-tiktok'></i>
+		    <i class="fa-brands fa-tiktok"></i>
           </div>
         </a>
       </li>
@@ -239,11 +239,11 @@ else{
 				</ul>
 
 				<?php if(count(get_data('social_media', array('type' => 1), TRUE)) > 0){ ?>
-				<h5 style="margin-top: 0px;"><b>WE ARE HERE:</b></h5>
+				<h5 style="margin-top: 0px; text-align: left;"><b>WE ARE HERE:</b></h5>
 				<?php } ?>
 				<ul class="footer-payment">
 					<?php foreach(get_data('social_media', array('type' => 1), TRUE) AS $key => $value){ ?>
-						<li class="px-1"><a href="<?php echo $value['url'] ?>" target="_blank"><span class="icon <?php echo $value['socialmedia'] ?> d-block"></span></a></li>
+						<li class="px-1"><a href="<?php echo $value['url'] ?>" target="_blank"><span class="icon <?php echo $value['socialmedia'] ?> d-block" style="margin-left:20px;"></span></a></li>
 					<?php } ?>
 				</ul>
 				<?php if(count(get_data('social_media', array('type' => 1), TRUE)) > 0){ ?>

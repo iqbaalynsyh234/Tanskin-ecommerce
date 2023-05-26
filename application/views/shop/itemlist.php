@@ -129,7 +129,7 @@
 		<div class="box-item">
 		<a href="<?php echo base_url().'shop/products/'.$linkproduk ?>">
 		<div class="box-image-show">
-			<img id="product-image" src="<?php echo base_url().'assets/image/product/'.$data['image1'] ?>" alt="">
+			<img src="<?php echo base_url().'assets/image/product/'.$data['image1'] ?>" alt="">
 			<div class="inner-center">
 			  <div id="loading-animation" class="loading"></div>
 				<div class="hover-cart"></div>
@@ -178,8 +178,6 @@
     </nav>
     </div>
     <?php } ?>
-
-		
 		
 	</div>
 	</div>
