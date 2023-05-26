@@ -20,6 +20,27 @@
 .slider.slider-horizontal {
     margin-top: 10px;
 }
+.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 45px;
+	height: 45px;
+	border: 4px solid #f3f3f3;
+	border-top: 4px solid #3498db;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
 </style>
 
 <div id="wrap-content">
@@ -108,8 +129,9 @@
 		<div class="box-item">
 		<a href="<?php echo base_url().'shop/products/'.$linkproduk ?>">
 		<div class="box-image-show">
-			<img src="<?php echo base_url().'assets/image/product/'.$data['image1'] ?>" alt="">
+			<img id="product-image" src="<?php echo base_url().'assets/image/product/'.$data['image1'] ?>" alt="">
 			<div class="inner-center">
+			  <div id="loading-animation" class="loading"></div>
 				<div class="hover-cart"></div>
 			</div>
 		</div>
@@ -168,6 +190,18 @@
 </div>
 </div>
 </div>
+<script>
+	window.addEventListener('DOMContentLoaded', (event) => {
+		// Show the loading animation
+		document.getElementById('loading-animation').style.display = 'block';
+
+		// Hide the loading animation and show the image when it's loaded
+		document.getElementById('product-image').addEventListener('load', function() {
+			document.getElementById('loading-animation').style.display = 'none';
+			document.getElementById('product-image').style.display = 'show';
+		});
+	});
+</script>
 <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-slider/bootstrap-slider.js"></script>
 <script src="<?php echo base_url(); ?>assets/plugins/sticky-kit/jquery.sticky-kit.min.js"></script>
 <script type="text/javascript">

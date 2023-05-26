@@ -763,6 +763,7 @@ label.error{
 .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
     text-align: center;
     margin: auto;
+	height: 700px;
 }
 .box-cart-info table{
 	width: 100%
@@ -1250,8 +1251,11 @@ label.error{
 	width: 35%;
 }
 
-
-
+@media(max-width: 992px){
+	 .img-responsive{
+		height: 200px !important;
+	}
+}
 
 /* RESPONSIVE */
 @media(max-width: 991px){
@@ -1303,6 +1307,9 @@ h1, .title-page h1 {
     height: 2px;
     border-radius: 1px;
     background-color: #fff;
+}
+.img-responsive{
+	height: 300px;
 }
 .menu-nav-log .icon-bar+.icon-bar {
     margin-top: 7px;

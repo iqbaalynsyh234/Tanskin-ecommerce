@@ -11,15 +11,13 @@
 	</ol>
 	</div>
 	</div>
-
-
+	
 	<div class="item-content">
 	<div class="item-content-left side-open">
 	<div class="nav-menu-page">
 		<?php $this->load->view('shop/menu-page'); ?>
 	</div>
 	</div>
-
 
 	<div class="item-content-right side-open">
 	<div class="row">

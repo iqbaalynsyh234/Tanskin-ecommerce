@@ -4,19 +4,13 @@
 <div class="row">
 	<div class="col-sm-12" style="position: relative;">
 
-	
-
 	<div class="item-content">
 
 	<div class="title-page" style="margin-bottom: 50px;">
-	<h1>Search : <?php echo ucwords(strtolower($key)) ?></h1>
+	<h1>Search ?: <?php echo ucwords(strtolower($key)) ?></h1>
 	</div>
-
-	
-
 	<div class="item-content-right">
 	<div class="row row-mar">
-
 	<?php 
 	if (isset($results) > 0) {
 	foreach ($results as $key => $data) { 

@@ -22,9 +22,8 @@ class Snap extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-		$this->load->library(array('xendit','session','cart'));
+		$this->load->library(array('xendit'));
 		$this->xendit->config($params);
-		$this->apiKey = $apiKey;
 		$this->load->helper('form','url','function');
 		$this->load->model(array('checkout/m_checkout'));	
     }
@@ -71,7 +70,7 @@ class Snap extends CI_Controller {
 		// Required
 		$transaction_details = array(
 		  'order_id' => time(),
-		  'gross_amount' => $ses_pembelian['midtrans_subtotal'], // no decimal allowed for creditcard
+		  'gross_amount' => $ses_pembelian['xendit_subtotal'], // no decimal allowed for creditcard
 		);
 
 		$item1_details = array();
@@ -86,14 +85,14 @@ class Snap extends CI_Controller {
 
 			$item1_details[] = array(
 				'id'       => 'D1',
-				'price'    => $ses_pembelian['midtrans_kodepembayaran'],
+				'price'    => $ses_pembelian['xendit_kodepembayaran'],
 				'quantity' => 1,
 				'name'     => "Kode Pembayaran"
 			);
 
 			$item1_details[] = array(
 				'id'       => 'D2',
-				'price'    => $ses_pembelian['midtrans_cost'],
+				'price'    => $ses_pembelian['xendit_cost'],
 				'quantity' => 1,
 				'name'     => "Pengiriman"
 			);
@@ -101,7 +100,7 @@ class Snap extends CI_Controller {
 			if($this->session->has_userdata('potongan_belanja')){
 				$item1_details[] = array(
 					'id'       => 'D3',
-					'price'    => -$ses_pembelian['midtrans_disc'],
+					'price'    => -$ses_pembelian['xendit_disc'],
 					'quantity' => 1,
 					'name'     => "Voucher (".$this->session->userdata('voucher').")"
 				);
@@ -189,9 +188,9 @@ class Snap extends CI_Controller {
 			$ses_pembelian = $this->session->userdata();
 
 			$noorder = $this->m_checkout->no_transaksi();
-			$code    = $ses_pembelian['midtrans_kodepembayaran'];
-			$cost    = $ses_pembelian['midtrans_cost_real'];
-			$subt    = $ses_pembelian['midtrans_subtotal'];
+			$code    = $ses_pembelian['xendit_kodepembayaran'];
+			$cost    = $ses_pembelian['xendit_cost_real'];
+			$subt    = $ses_pembelian['xendit_subtotal'];
 
 			if($this->session->userdata('login') == true){
 				$id_users = $this->session->userdata('id');
@@ -263,8 +262,8 @@ class Snap extends CI_Controller {
 				'total_qty'          => $this->cart->total_items(),
 				'total_value'        => $this->cart->total(),
 				'voucher'            => $voucher,
-				'discount_voucher'   => $ses_pembelian['midtrans_vouc_disc'],
-				'voucher_type'       => $ses_pembelian['midtrans_vouc_type'],
+				'discount_voucher'   => $ses_pembelian['xendit_vouc_disc'],
+				'voucher_type'       => $ses_pembelian['xendit_vouc_type'],
 				'transaction_status' => $result->transaction_status,
 				'transaction_time'   => $result->transaction_time,
 				'order_id'           => $result->order_id,
@@ -333,13 +332,13 @@ class Snap extends CI_Controller {
 		        'potongan_belanja',
 		        'potongan_ongkir',
 		        'potongan_session',
-				'midtrans_kodepembayaran',
-		        'midtrans_cost',
-		        'midtrans_subtotal',
-		        'midtrans_disc',
-		        'midtrans_cost_real',
-		        'midtrans_vouc_disc', 
-		        'midtrans_vouc_type'
+				'xendit_kodepembayaran',
+		        'xendit_cost',
+		        'xendit_subtotal',
+		        'xendit_disc',
+		        'xendit_cost_real',
+		        'xendit_vouc_disc', 
+		        'xendit_vouc_type'
 				);
 				$this->session->unset_userdata($array_items);
 				$this->cart->destroy();

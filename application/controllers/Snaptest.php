@@ -23,7 +23,7 @@ class Snaptest extends CI_Controller {
     {
         parent::__construct();
 		$this->load->library('xendit');
-		$this->midtrans->config($params);
+		$this->xendit->config($params);
 		$this->load->helper('url');
 		$this->load->model(array('checkout/m_checkout'));	
     }

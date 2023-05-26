@@ -22,10 +22,10 @@ class Private_snap extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-		$this->load->library(array('xendit-php','session'));
-		$this->midtrans->config($params);
+		$this->load->library(array('xendit','session'));
+		$this->xendit->config($params);
 		$this->load->helper('form','url','function');
-		$this->load->model(array('checkout/m_checkout'));	
+		$this->load->model(array('checkout/payment-method'));	
     }
 
   
@@ -122,7 +122,7 @@ class Private_snap extends CI_Controller {
         );
 
 		error_log(json_encode($transaction_data));
-		$snapToken = $this->midtrans->getSnapToken($transaction_data);
+		$snapToken = $this->xendit->getSnapToken($transaction_data);
 		error_log($snapToken);
 		echo $snapToken;
     }
@@ -244,8 +244,6 @@ class Private_snap extends CI_Controller {
 				$this->db->update("product_map_stock", array("stock" => $itemstock['stock'] - $items['qty']), array("ID_ms" => $itemstock['ID_ms']));
 
 		    }
-
-
 
 			$insertorder = $this->db->insert('orders', $dataorder);
 			

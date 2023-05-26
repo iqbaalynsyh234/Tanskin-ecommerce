@@ -3,7 +3,7 @@ if($this->uri->segment(1) == 'checkout'){ }
 else{
 ?>
 <div class="footer-main">
-<style>
+    <style>
 	
  .fab-icon-holder {
      width: 45px;
@@ -30,7 +30,7 @@ else{
   bottom: 140px;
   left: 10px;
   color: #FFF;
-  background: #5865f2;
+  background: black;
   border-radius: 100px;
   text-align: center;
   font-size: 30px;
@@ -45,7 +45,6 @@ else{
   justify-content: center;
   height: 100%;
   font-size: 25px;
-  color: #050000;
 }
 .fab-options {
   list-style-type: none;
@@ -68,7 +67,6 @@ else{
   justify-content: flex-start;
   padding: 5px;
 }
-
 .fab-label {
   padding: 2px 5px;
   align-self: center;
@@ -82,33 +80,34 @@ else{
   margin-left: 10px;
 }
 
-</style>
 
+</style>
 <!-- ========CALL CENTER CONTACT========== -->
 <div class="fab-container">
     <div class="fab fab-icon-holder" style="background-color:#FFF; padding:5px">
-	<div class="fab-icon-holder" style="background-color: #5865F2;">
-    <i class="fab fa-instagram"></i>
+       <div class="fab-icon-holder">
+          <i class="far fa-user-headset"></i>
+       </div>
     </div>
     <ul class="fab-options">
       <li>
-        <a href="https://www.instagram.com/novalsyahhhh/" class="text-decoration-none" target="_blank">
+        <a href="https://instagram.com/tanskin.id?igshid=NTc4MTIwNjQ2YQ==" class="text-decoration-none" target="_blank">
           <div class="fab-icon-holder" style="background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);">
             <i class="fab fa-instagram"></i>
           </div>
         </a>
       </li>
       <li>
-        <a href="https://wa.me/6285748638453" class="text-decoration-none" target="_blank">
+        <a href="https://api.whatsapp.com/send/?phone=628119212412&text=Hi+TANSKIN&type=phone_number&app_absent=0" class="text-decoration-none" target="_blank">
           <div class="fab-icon-holder" style="background-color: #25D366;">
             <i class="fab fa-whatsapp"></i>
           </div>
         </a>
       </li>
       <li>
-        <a href="https://www.tiktok.com/@valsyahh_?_t=8Yyh1RapBNy&_r=1" class="text-decoration-none" target="_blank">
-		<div class="fab-icon-holder" style="background-color: #5865F2;">
-            <i class="fab fa-tiktok"></i>
+        <a href="https://www.tiktok.com/@tanskinofficial?_t=8cHJDUGdiEi&_r=1" class="text-decoration-none" target="_blank">
+          <div class="fab-icon-holder" style="background-color: black;">
+            <i class='bi bi-tiktok'></i>
           </div>
         </a>
       </li>
@@ -235,12 +234,12 @@ else{
 		<div class="col-xs-12 col-sm-12 col-md-12 col-pad">
 				<div class="wrap-menu-footer text-center">
 				<ul class="footer-payment">
-					<li class="icon midtrans"></li>
+					<img src="https://i.postimg.cc/Mp0zBCXM/xendit-logo-vector.png" style="height: 70px;">
 					<li class="icon ship-jne"></li>
 				</ul>
 
 				<?php if(count(get_data('social_media', array('type' => 1), TRUE)) > 0){ ?>
-				<h5 style="margin-top: 0px;"><b>KAMI JUGA HADIR DI:</b></h5>
+				<h5 style="margin-top: 0px;"><b>WE ARE HERE:</b></h5>
 				<?php } ?>
 				<ul class="footer-payment">
 					<?php foreach(get_data('social_media', array('type' => 1), TRUE) AS $key => $value){ ?>
@@ -248,10 +247,10 @@ else{
 					<?php } ?>
 				</ul>
 				<?php if(count(get_data('social_media', array('type' => 1), TRUE)) > 0){ ?>
-					<h5 style="margin-top: 0px;" class="method-payment"><b>DENGAN BERBAGAI METODE PEMBAYARAN:</b></h5>
+					<h5 style="margin-top: 0px;" class="method-payment"><b>WITH VARIOUS PAYMENT METHODS:</b></h5>
                  <?php } ?>
 				<ul class="footer-payment">
-				<img src="assets/image/logo/payment.png" style="height:80px;">
+				<img src="https://i.postimg.cc/s2mpNbqq/payment.jpg" style="height:60px;">
 				</ul>
 				</div>
 		</div>
@@ -279,6 +278,3 @@ $(function(){
 	 $('.int-cart span').load("<?php echo base_url();?>shop/badgecart");
 });
 </script>
-
-
-

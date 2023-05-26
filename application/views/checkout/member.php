@@ -155,7 +155,7 @@
                     <div class="checkbox">
                       <label>
                         <input type="checkbox" name="cpol" checked> *
-By creating an account, you have read, understood &amp; agree to the<a href="#">Privacy Policy</a> and <a href="#">Terms &amp; Conditions</a>.
+                        By creating an account, you have read, understood &amp; agree to the<a href="#">Privacy Policy</a> and <a href="#">Terms &amp; Conditions</a>.
                       </label>
                     </div>
                   </div>

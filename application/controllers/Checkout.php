@@ -420,16 +420,13 @@ class Checkout extends MY_Controller {
 					);
 				}
 			endforeach;
-			
 			// pre($data['dataalert']);
 
 			if(in_array("out of stock", $stocklist, false)){
 				$data['buybutton'] = "disabled";
 			}else{
 				$data['buybutton'] = "";
-			}
-
-			
+			}	
 
 			$this->render_page('checkout/payment', $data);
 		}else{
@@ -517,7 +514,7 @@ class Checkout extends MY_Controller {
 			 if($this->uri->segment(3) == 'payment-method'){
 			 	$digits  = 3;
 				$randnum = rand(pow(10, $digits-1), pow(10, $digits)-1);
-				$randnum = ($this->session->has_userdata('xendit_kodepembayaran') && $this->session->userdata('xendit_kodepembayaran') > 0) ? $this->session->userdata('xendit_kodepembayaran') : $randnum;
+				$randnum = ($this->session->has_userdata('midtrans_kodepembayaran') && $this->session->userdata('midtrans_kodepembayaran') > 0) ? $this->session->userdata('midtrans_kodepembayaran') : $randnum;
 			 }else{
 				$randnum = 0;
 			 }
@@ -538,13 +535,13 @@ class Checkout extends MY_Controller {
 			 $totalcost   = $cost-$potongan_session;
 			 $totalamount = $totalcost+$randnum+$total_belanja;
 			 $datapay = array(
-				'xendit_kodepembayaran' => $randnum,
-				'xendit_cost'           => $totalcost,
-				'xendit_cost_real'      => $cost,
-				'xendit_vouc_disc'      => $discount_voucher,
-				'xendit_vouc_type'      => $vou_type,
-				'xendit_disc'           => $this->session->userdata('potongan_belanja'),
-				'xendit_subtotal'       => $totalamount
+				'midtrans_kodepembayaran' => $randnum,
+				'midtrans_cost'           => $totalcost,
+				'midtrans_cost_real'      => $cost,
+				'midtrans_vouc_disc'      => $discount_voucher,
+				'midtrans_vouc_type'      => $vou_type,
+				'midtrans_disc'           => $this->session->userdata('potongan_belanja'),
+				'midtrans_subtotal'       => $totalamount
 		      );
 		      $this->session->set_userdata($datapay);
 
@@ -552,7 +549,7 @@ class Checkout extends MY_Controller {
 		            <h1><b>Detail Order</b> ( <span>'.$this->cart->total_items().'</span> item(s) )<small>* All the prices are in IDR</small></h1>
 		        </div>
 		        <div class="box-cart-body">
-		        '.$datapay['xendit_disc'].'
+		        '.$datapay['midtrans_disc'].'
 		        <table class="table-item-list">
 		            <thead>
 		                <tr>

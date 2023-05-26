@@ -92,7 +92,7 @@
         </div>
         </div>
             
-        <a href="<?php echo base_url().'checkout/shipping_method' ?>"><i class="fa fa-angle-left"></i> Back </a>
+        <a href="<?php echo base_url().'checkout/payment-method' ?>"><i class="fa fa-angle-left"></i> Back </a>
         </div>
         </div>
 
