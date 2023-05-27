@@ -102,12 +102,12 @@ else{
           <div class="fab-icon-holder" style="background-color: #25D366;">
             <i class="fab fa-whatsapp"></i>
           </div>
-        </a>
+        </a> 
       </li>
       <li>
         <a href="https://www.tiktok.com/@tanskinofficial?_t=8cHJDUGdiEi&_r=1" class="text-decoration-none" target="_blank">
-          <div class="fab-icon-holder" style="background-color: black;">
-		    <i class="fa-brands fa-tiktok"></i>
+          <div class="fab-icon-holder" style="background-color: ;">
+		  <a href='https://postimg.cc/mtxwkXQM' target='_blank'><img src='https://i.postimg.cc/jd2k8B28/Tik-Tok-Logo-Download-Free-PNG.png' border='0' alt='Tik-Tok-Logo-Download-Free-PNG'/></a>
           </div>
         </a>
       </li>

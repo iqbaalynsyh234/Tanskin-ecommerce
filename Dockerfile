@@ -1,42 +1,14 @@
-FROM php:7.1-fpm
-
-# Arguments defined in docker-compose.yml
-ARG user
-ARG uid
-
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    libpng-dev \
-    libzip-dev \
-    libonig-dev \
-    libxml2-dev \
-    libpq-dev \
-    zip \
-    unzip\
-    libmagickwand-dev
-
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
-    && apt-get update && apt-get upgrade -y && \
-    apt-get install -y nodejs
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
-
-# Get latest Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-# Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user
-
-# Set working directory
-WORKDIR /var/www
-
-USER $user
-
-EXPOSE 8005
+FROM php:5.6.30-fpm-alpine
+RUN apk update &amp;&amp; apk add build-base
+RUN apk add postgresql postgresql-dev \
+  &amp;&amp; docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+  &amp;&amp; docker-php-ext-install pdo pdo_pgsql pgsql
+RUN apk add zlib-dev git zip \
+  &amp;&amp; docker-php-ext-install zip
+RUN curl -sS https://getcomposer.org/installer | php \
+        &amp;&amp; mv composer.phar /usr/local/bin/ \
+        &amp;&amp; ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
+COPY . /app
+WORKDIR /app
+RUN composer install --prefer-source --no-interaction
+ENV PATH="~/.composer/vendor/bin:./vendor/bin:${PATH}"

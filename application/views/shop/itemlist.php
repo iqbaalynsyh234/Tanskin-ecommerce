@@ -127,11 +127,11 @@
 	?>
 		<div class="col-xs-6 col-sm-4 col-pad">
 		<div class="box-item">
+		 <div id="loading-animation" class="loading"></div>
 		<a href="<?php echo base_url().'shop/products/'.$linkproduk ?>">
 		<div class="box-image-show">
 			<img src="<?php echo base_url().'assets/image/product/'.$data['image1'] ?>" alt="">
 			<div class="inner-center">
-			  <div id="loading-animation" class="loading"></div>
 				<div class="hover-cart"></div>
 			</div>
 		</div>
@@ -178,6 +178,8 @@
     </nav>
     </div>
     <?php } ?>
+
+		
 		
 	</div>
 	</div>
@@ -196,7 +198,7 @@
 		// Hide the loading animation and show the image when it's loaded
 		document.getElementById('product-image').addEventListener('load', function() {
 			document.getElementById('loading-animation').style.display = 'none';
-			document.getElementById('product-image').style.display = 'show';
+			document.getElementById('product-image').style.display = 'block';
 		});
 	});
 </script>

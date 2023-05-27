@@ -760,7 +760,6 @@ class Shop extends MY_Controller {
   	}
 
   	public function search($key){
-
   			$key = input_clean(urldecode($key));
   			$query = $this->db
 	  		->like('kategori', $key, 'both')
