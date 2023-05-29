@@ -20,6 +20,21 @@
 .slider.slider-horizontal {
     margin-top: 10px;
 }
+@media(max-width: 992px){
+	.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 45px;
+	height: 45px;
+	border: 4px solid #f3f3f3;
+	border-top: 4px solid #3498db;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+	}
+}
+
 .loading {
 	position: absolute;
 	top: 50%;
@@ -31,6 +46,7 @@
 	border-top: 4px solid #3498db;
 	border-radius: 50%;
 	animation: spin 1s linear infinite;
+	z-index: 1;
 }
 
 @keyframes spin {
