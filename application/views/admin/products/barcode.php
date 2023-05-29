@@ -34,7 +34,7 @@
         $selected = ($row[''].'-'.$row['voucher'] == $value['barcode'].'-'.$value['size']) ? 'selected' : '';
       ?>
           <option value="<?php echo $value['barcode'].'-'.$value['size'] ?>" <?php echo $selected ?>>
-          <?php echo $value['ItemCode'].' / '.$value['barcode'].' - '.strtoupper($value['ColorName']).' - '.strtoupper($value['Size']) ?>
+          <?php echo $value['vou_code'].' / '.$value['barcode'].' - '.strtoupper($value['ColorName']).' - '.strtoupper($value['Size']) ?>
           </option>
       <?php } ?>
       </select>

@@ -422,7 +422,6 @@ class Entersite extends MY_Controller {
 		
 	}
 
-
 	function addmedsos(){
 		if($this->input->post('addmedsos') != null){
 			$media  = $this->input->post('media');

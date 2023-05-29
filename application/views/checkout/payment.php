@@ -115,17 +115,18 @@
         <div class="box-cart">
         <span class="load-detail-order">
         </span>
-        
+
+        <tr>
         <th colspan="3">
-                    
-          <label><a href="javascript:void(0);" class="have-voucher">Have voucher code ?</a></label>
-            <div class="input-group hidden yes-i-have-vou" style="width: 100%">
+          <label><a href="javascript:void(0);" class="have-voucher">Have voucher code?</a></label>
+          <div class="input-group hidden yes-i-have-vou" style="width: 100%">
             <input type="text" class="form-control">
-              <span class="input-group-btn">
-                  <button type="button" class="btn btn-info btn-flat" id ="use">Use the voucher klik here!</button>
-              </span>
-             </div>                             
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-info btn-flat" id="use">Use the voucher click here!</button>
+            </span>
+          </div>
         </th>
+
 
         <div class="box-cart-footer">
         <hr>
@@ -175,17 +176,17 @@
 
 <script>
   // Get the elements
-var voucherInput = document.querySelector('.input-group input');
-var useButton = document.getElementById('use');
+ var voucherInput = document.querySelector('.input-group input');
+ var useButton = document.getElementById('use');
 
-// Add event listener to the button
+ // Add event listener to the button
 useButton.addEventListener('click', function() {
   // Get the voucher code entered by the user
   var voucherCode = voucherInput.value.trim();
   
   // Validate the voucher code (add your own validation logic here)
   if (voucherCode === '') {
-    alert('Please enter a voucher code.');
+    alert('Voucher Code fild in the blank.');
     return;
   }
   

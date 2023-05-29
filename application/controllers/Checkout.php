@@ -4,7 +4,7 @@ class Checkout extends MY_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helper(array('form', 'url', 'function'));
-		$this->load->library(array('session', 'cart,'));
+		$this->load->library(array('session', 'cart'));
 		$this->load->model(array('checkout/m_checkout', 'shop/m_shop'));
 	}
 

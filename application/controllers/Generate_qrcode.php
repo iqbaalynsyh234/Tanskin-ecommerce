@@ -13,6 +13,6 @@ class Generate_qrcode extends CI_Controller
         $data['input_vou'] = $this->db->get('input_vou')->result(); 
         $data['start_voucher'] = $this->db->get('start_voucher')->result(); 
         $data['publish'] = $this->db->get('publish')->result(); 
-        $this->load->view('entersite/voucher', $data); // passing data ke view
+        $this->load->view('entersite/barcode', $data); // passing data ke view
     }
 }
