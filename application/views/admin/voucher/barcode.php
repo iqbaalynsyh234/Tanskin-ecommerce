@@ -18,7 +18,7 @@
 	<div class="col-sm-12 col-pad">
 	<div class="box">
 	<div class="box-header with-border">
-	<h3 class="box-title">Print Barcode Label</h3>
+	<h3 class="box-title">Print Barcode Label Voucher</h3>
 	</div>
 	<form action="<?php echo base_url('entersite/barcode') ?>" class="myform" method="post">
 	<div class="box-body">
@@ -28,12 +28,13 @@
       <label>Code</label>
       
       <select name="code" class="form-control select2" style="width: 100%;">
-        <option value="">Select Barcode Voucher</option>
+        <!-- <option value="">Select Barcode</option> -->
+
       <?php
       foreach ($code as $key => $value) {
-        $selected = ($row[''].'-'.$row['voucher'] == $value['barcode'].'-'.$value['size']) ? 'selected' : '';
+        $selected = ($row['voucher'].'-'.$row['vou_code'] == $value['barcode'].'-'.$value['vou_code']) ? 'selected' : '';
       ?>
-          <option value="<?php echo $value['barcode'].'-'.$value['size'] ?>" <?php echo $selected ?>>
+          <option value="<?php echo $value['barcode'].'-'.$value['vou_code'] ?>" <?php echo $selected ?>>
           <?php echo $value['ItemCode'].' / '.$value['barcode'].' - '.strtoupper($value['ColorName']).' - '.strtoupper($value['Size']) ?>
           </option>
       <?php } ?>
@@ -44,7 +45,7 @@
     <div class="col-sm-4 col-pad">
       <div class="form-group">
         <label>Quantity</label>
-        <input type="number" class="form-control" placeholder="123" name="qty" value="<?php echo ($for > 0) ? $for : ''; ?>" required>
+        <input type="number" class="form-control" name="qty" value="<?php echo ($for > 0) ? $for : ''; ?>" required>
       </div>
     </div>
 

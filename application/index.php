@@ -21,7 +21,7 @@ $params = [
     "external_id" => "demo_147580196270",
     "payer_email" => "sample_email@xendit.co",
     "description" => "Tanskin Toner",
-    "amount" => 70000000,
+    "amount" => 7000,
 ];
 
 $createInvoice = \Xendit\Invoice::create($params);

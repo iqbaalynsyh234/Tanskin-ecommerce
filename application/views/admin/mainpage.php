@@ -241,6 +241,7 @@
             <li><a href="<?php echo base_url().'admin/voucher/template_voucher' ?>"><i class="fa fa-circle-o"></i> Template</a></li>
             <li><a href="<?php echo base_url().'entersite/voucher' ?>"><i class="fa fa-circle-o"></i>Voucher Code</a></li>
             <li><a href="<?php echo base_url().'admin/voucher/voucher_used' ?>"><i class="fa fa-circle-o"></i>Vouchers List</a></li>
+            <li><a href="<?php echo base_url().'entersite/barcode' ?>"><i class="fa fa-circle-o"></i>Barcode</a></li>
           </ul>
         </li>
 
