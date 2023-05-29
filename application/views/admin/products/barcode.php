@@ -34,7 +34,7 @@
         $selected = ($row[''].'-'.$row['voucher'] == $value['barcode'].'-'.$value['size']) ? 'selected' : '';
       ?>
           <option value="<?php echo $value['barcode'].'-'.$value['size'] ?>" <?php echo $selected ?>>
-          <?php echo $value['vou_code'].' / '.$value['barcode'].' - '.strtoupper($value['ColorName']).' - '.strtoupper($value['Size']) ?>
+          <?php echo $value['ItemCode'].' / '.$value['barcode'].' - '.strtoupper($value['ColorName']).' - '.strtoupper($value['Size']) ?>
           </option>
       <?php } ?>
       </select>
@@ -44,7 +44,7 @@
     <div class="col-sm-4 col-pad">
       <div class="form-group">
         <label>Quantity</label>
-        <input type="number" class="form-control" placeholder="123" name="qty" value="<?php echo ($for > 0) ? $for : ''; ?>" required>
+        <input type="number" class="form-control" placeholder="123-45-678"name="qty" value="<?php echo ($for > 0) ? $for : ''; ?>" required>
       </div>
     </div>
 
