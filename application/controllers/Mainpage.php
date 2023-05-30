@@ -58,6 +58,10 @@ class Mainpage extends MY_Controller {
 	public function contact(){
 		$this->render_page('contact');
 	}
+
+	public function barcode($barcode_url= ''){
+		$this->load->view('admin/voucher/voucher_used');
+	}
 	
 } 
 ?>

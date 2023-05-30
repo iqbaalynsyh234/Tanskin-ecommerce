@@ -23,7 +23,7 @@
           <div class="row row-mar">
           <div class="col-sm-12 col-pad">
             <div class="form-group">
-                <label>Voucher Code</label>
+                <label>Voucher Code123</label>
                 <input type="text" name="coupon" class="form-control">
             </div>
           </div>

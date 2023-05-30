@@ -20,6 +20,7 @@
 .slider.slider-horizontal {
     margin-top: 10px;
 }
+
 @media(max-width: 992px){
 	.loading {
 	position: absolute;
@@ -35,6 +36,13 @@
 	}
 }
 
+img.tengah {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width: 130px;
+}
+
 .loading {
 	position: absolute;
 	top: 50%;
@@ -46,7 +54,7 @@
 	border-top: 4px solid #3498db;
 	border-radius: 50%;
 	animation: spin 1s linear infinite;
-	z-index: 1;
+	z-index: -1;
 }
 
 @keyframes spin {
@@ -182,7 +190,7 @@
 	<?php } }else{ ?>
 	<div class="col-xs-12 col-sm-12 col-pad">
 	<div style="min-height: 350px;">
-	<div class="alert alert-info" role="alert">No product(s) found.</div>
+	<img  class="tengah" src="https://i.postimg.cc/C573z3DR/not-found.jpg" alt="">
 	</div>
 	</div>
 	<?php } ?>

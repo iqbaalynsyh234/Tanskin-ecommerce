@@ -9,7 +9,6 @@
   $sql = "SELECT * FROM payment_xendit";
 
  ?>
-
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/select2/select2.min.css">
 <style type="text/css">
 .select2-container--default .select2-selection--single .select2-selection__rendered {

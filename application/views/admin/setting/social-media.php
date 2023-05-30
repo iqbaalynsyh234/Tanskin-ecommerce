@@ -25,6 +25,7 @@ $segment = $this->uri->segment(3);
                 <option value="youtube">Youtube</option>
                 <option value="pinterest">Pinterest</option>
                 <option value="linkedin">Linkedin</option>
+                <option value="tiktok">Tiktok</option>
               </select>
           </div>
           </div>

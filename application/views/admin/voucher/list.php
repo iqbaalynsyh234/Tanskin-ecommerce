@@ -21,6 +21,13 @@
                 <input type="text" name="coupon" class="form-control">
             </div>
           </div>
+
+          <div class="col-sm-12 col-pad">
+            <div class="form-group">
+                <label>Barcode Code</label>
+                <input type="text" name="coupon" class="form-control">
+            </div>
+          </div>
           
           <div class="col-sm-6 col-pad">
           <div class="form-group">
@@ -122,7 +129,8 @@
   <div class="box-header with-border">
   <h3 class="box-title">Voucher List</h3>
     <div class="box-tools">
-    <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">New Voucher</a>          
+    <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">New Voucher</a>
+    <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">Create Barcode</a>        
     </div>
     <div class="clearfix"></div>
   </div>

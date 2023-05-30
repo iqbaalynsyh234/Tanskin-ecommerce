@@ -104,6 +104,7 @@ class Voucher extends MY_Controller {
 
 		$generator = new Picqer\Barcode\BarcodeGeneratorHTML();
 		echo $generator->getBarcode('081231723897', $generator::TYPE_CODE_128);
+		redirect(base_url().'admin/barcode');
 	 }
 	// public function test_email(){
 		   		/*$temp_voucher = $this->db->get_where('voucher_temp', array('publish' => 1));
