@@ -239,7 +239,7 @@ else{
 				</ul>
 
 				<?php if(count(get_data('social_media', array('type' => 1), TRUE)) > 0){ ?>
-				<h5 style="margin-top: 0px; text-align: left;"><b>WE ARE HERE:</b></h5>
+				<h5 style="margin-top: 0px;"><b>WE ARE HERE:</b></h5>
 				<?php } ?>
 				<ul class="footer-payment">
 					<?php foreach(get_data('social_media', array('type' => 1), TRUE) AS $key => $value){ ?>
