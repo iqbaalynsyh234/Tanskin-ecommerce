@@ -1,3 +1,25 @@
+<?php
+
+require 'vendor/autoload.php';
+
+use Xendit\Xendit;
+
+Xendit::setApiKey('xnd_production_0fe7ZApI47qHxBMYkQZq8r8sGISgzCFhjdInJ3Vma9ZMfgG4vMTA2lNArdWM3');
+
+// $id = '63c0e47ba59ff7c3537117bb';
+// Melihat Invoice
+// $getInvoice = \Xendit\Invoice::retrieve($id);
+// echo '<pre>';
+// print_r($getInvoice);
+// echo '</pre>';
+
+// Invoice Kadaluarsa
+// $expireInvoice = \Xendit\Invoice::expireInvoice($id);
+// echo '<pre>';
+// print_r($expireInvoice);
+// echo '</pre>';
+
+?>
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/select2/select2.min.css">
 <style type="text/css">
 .select2-container--default .select2-selection--single .select2-selection__rendered {

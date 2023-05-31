@@ -21,7 +21,7 @@ $price = str_replace('.', '', $_POST['item_price']);
 $category = $_POST['item_category'];
 
 $items = [];
-$sum_price = 0;
+$sum_price = 10000;
 for ($i = 0; $i < count($item_name); $i++) {
 
     $sum_price = $sum_price + $quantity[$i] * $price[$i];
@@ -42,21 +42,21 @@ $params = [
     'description' => 'Invoice 1',
     'invoice_duration' => 86400,
     // 'for-user-id' => '3',
-    'customer' => [
-        'name' => $name,
-        'email' => $email,
-        'mobile_number' => $mobile_number,
-        'addresses' => [
-            [
-                'city' => $city,
-                'country' => $country,
-                'postal_code' => $postal_code,
-                'state' => $complete_address,
-                // 'street_line1' => 'Jalan Makan',
-                // 'street_line2' => 'Kecamatan Kebayoran Baru'
-            ]
-        ]
-    ],
+    // 'customer' => [
+    //     'name' => $name,
+    //     'email' => $email,
+    //     'mobile_number' => $mobile_number,
+    //     'addresses' => [
+    //         [
+    //             'city' => $city,
+    //             'country' => $country,
+    //             'postal_code' => $postal_code,
+    //             'state' => $complete_address,
+    //             // 'street_line1' => 'Jalan Makan',
+    //             // 'street_line2' => 'Kecamatan Kebayoran Baru'
+    //         ]
+    //     ]
+    // ],
     'currency' => 'IDR',
     // 'items' => [
     //     [
@@ -74,7 +74,7 @@ $params = [
     //         // 'url' => 'https=>//yourcompany.com/example_item'
     //     ],
     // ],
-    'items' => $items,
+    // 'items' => $items,
     // 'fees' => [
     //     [
     //         'type' => 'ADMIN',

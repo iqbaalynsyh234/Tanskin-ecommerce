@@ -116,22 +116,13 @@
         </span>
 
         <tr>
-        <th colspan="3">
-          <label><a href="javascript:void(0);" class="have-voucher">Have voucher code?</a></label>
-          <div class="input-group hidden yes-i-have-vou" style="width: 100%">
-            <input type="text" class="form-control">
-            <span class="input-group-btn">
-              <button type="button" class="btn btn-info btn-flat" id="use">Use the voucher click here!</button>
-            </span>
-          </div>
-        </th>
-
-
+      
         <div class="box-cart-footer">
         <hr>
         <?php if(strtoupper($this->session->userdata('ship_ship')) != "PRICE NOT FOUND.") { ?>
-        <button id="submitdata-01" type="button" name="confirm" value="confirm" class="btn btn-info" <?php echo $buybutton ?>>Pembayaran<span class="if-register"></span></button>
+        <button id="paymentButton" type="button" name="confirm" value="confirm" class="btn btn-info" <?php echo $buybutton ?>>Pembayaran<span class="if-register"></span></button>
         <?php } ?>
+        <a href="controller.php"></a>
         </div>
         </div>
         </div>
@@ -292,4 +283,26 @@ $('body').on('click', '.have-voucher', function(){
       }
     });
   });
+</script>
+
+<script>
+  // Add an event listener to the "Pembayaran" button
+  const paymentButton = document.getElementById('paymentButton');
+  paymentButton.addEventListener('click', generateInvoice);
+
+  // Function to generate the invoice URL
+  function generateInvoice() {
+    // Set up the invoice details
+    const invoiceData = {
+      external_id: '1', // Replace with your own external ID
+      payer_email: 'iqbalalyansyah3@g', // Replace with the customer's email address
+      description: 'tes', // Replace with a description of the invoice
+    };
+
+    // Construct the invoice URL with the invoice details
+    const invoiceUrl = `https://checkout.xendit.co/web/invoice?external_id=${}&payer_email=${invoiceData.payer_email}&description=${invoiceData.description}`;
+
+    // Redirect the user to the Xendit invoice URL
+    window.location.href = invoiceUrl;
+  }
 </script>

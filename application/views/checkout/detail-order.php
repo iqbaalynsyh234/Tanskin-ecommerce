@@ -69,6 +69,7 @@
                 <tr>
                 <th colspan="2">Total</th>
                 <th class="text-right"><?php echo rupiah($this->cart->total()); ?></th>
+                
                 </tr>
             </tfoot>
         </table>

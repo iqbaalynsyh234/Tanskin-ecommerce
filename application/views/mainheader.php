@@ -173,13 +173,18 @@ if($this->uri->segment(1) == 'checkout'){
       <li class="li-one">
         <a href="<?php echo base_url('shop/catalogue/'.$value['link']) ?>"><div><?php echo strtoupper($value['kategori']) ?></div></a>
       </li>
-    <?php } ?>
+     <?php } ?>
   </ul>
 
   <?php if($this->session->userdata('login') == true){ ?>
     <li class="li-one"><a href="<?php echo base_url('shop/logout') ?>"><div>KELUAR</div></a></li>
   <?php } ?>
+
+  <ul class="menu-one">
+  <li class="li-one">FOLLOW US
+     <i class="fab fa-instagram"></i>
   </ul>
+
 </div>
 </div>
 
