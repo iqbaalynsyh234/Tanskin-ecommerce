@@ -288,21 +288,18 @@ $('body').on('click', '.have-voucher', function(){
 <script>
   // Add an event listener to the "Pembayaran" button
   const paymentButton = document.getElementById('paymentButton');
-  paymentButton.addEventListener('click', generateInvoice);
+  paymentButton.addEventListener('click', redirectToCheckout);
 
-  // Function to generate the invoice URL
-  function generateInvoice() {
-    // Set up the invoice details
-    const invoiceData = {
-      external_id: '1', // Replace with your own external ID
-      payer_email: 'iqbalalyansyah3@g', // Replace with the customer's email address
-      description: 'tes', // Replace with a description of the invoice
-    };
+  // Function to redirect to the Xendit checkout page
+  function redirectToCheckout() {
+    // Replace the following variables with the actual values
+    const externalId = '12'; // Replace with your own external ID for the invoice
+    const amount = <?php echo rupiah($orders->Subtotal) ?> // Replace with the invoice amount in the smallest currency unit
 
-    // Construct the invoice URL with the invoice details
-    const invoiceUrl = `https://checkout.xendit.co/web/invoice?external_id=${}&payer_email=${invoiceData.payer_email}&description=${invoiceData.description}`;
+    // Construct the Xendit checkout URL
+    const checkoutUrl = `https://checkout.xendit.co/start/${externalId}?amount=${amount}`;
 
-    // Redirect the user to the Xendit invoice URL
-    window.location.href = invoiceUrl;
+    // Redirect the user to the Xendit checkout page
+    window.location.href = checkoutUrl;
   }
 </script>
