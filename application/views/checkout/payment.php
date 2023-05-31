@@ -293,8 +293,8 @@ $('body').on('click', '.have-voucher', function(){
   // Function to redirect to the Xendit checkout page
   function redirectToCheckout() {
     // Replace the following variables with the actual values
-    const externalId = '12'; // Replace with your own external ID for the invoice
-    const amount = <?php echo rupiah($orders->Subtotal) ?> // Replace with the invoice amount in the smallest currency unit
+    const externalId = 'YOUR_EXTERNAL_ID'; // Replace with your own external ID for the invoice
+    const amount = 100000; // Replace with the invoice amount in the smallest currency unit
 
     // Construct the Xendit checkout URL
     const checkoutUrl = `https://checkout.xendit.co/start/${externalId}?amount=${amount}`;
