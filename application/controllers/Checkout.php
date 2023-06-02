@@ -481,6 +481,10 @@ class Checkout extends MY_Controller {
 		}
 	}
 
+	public function FinishPayment(){
+		$this->load->view('finish');
+	}
+
 
 	function loadorder(){
 

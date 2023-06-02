@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require_once APPPATH . '../libraries/xendit-php/autoload.php';
+require_once APPPATH . '../third_party/xendit-php-master/autoload.php';
 
 use Xendit\Xendit;
 
@@ -11,7 +11,7 @@ class InvoiceController extends CI_Controller {
         parent::__construct();
         
         // Set your Xendit API key
-        Xendit::setApiKey(''); // Replace with your Xendit API key
+        Xendit::setApiKey('xnd_production_0fe7ZApI47qHxBMYkQZq8r8sGISgzCFhjdInJ3Vma9ZMfgG4vMTA2lNArdWM3'); // Replace with your Xendit API key
     }
 
     public function index()
@@ -24,7 +24,7 @@ class InvoiceController extends CI_Controller {
     public function generateInvoice() {
         // Retrieve the invoice data from your database or other sources
         $externalId = '233341'; // Replace with your own external ID for the invoice
-        $amount = 100000; // Replace with the invoice amount in the smallest currency unit
+        $amount = 120000; // Replace with the invoice amount in the smallest currency unit
         $payerEmail = 'customer@example.com'; // Replace with the customer's email address
         $description = 'Invoice Payment'; // Replace with a description of the invoice
     

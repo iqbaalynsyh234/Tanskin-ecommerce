@@ -286,13 +286,43 @@ $('body').on('click', '.have-voucher', function(){
 </script>
 
 <script>
-    // Add an event listener to the "Pembayaran" button
-    const paymentButton = document.getElementById('paymentButton');
-    paymentButton.addEventListener('click', redirectToInvoice);
+  // Add an event listener to the "Pembayaran" button
+  const paymentButton = document.getElementById('paymentButton');
+  paymentButton.addEventListener('click', redirectToCheckout);
 
-    // Function to redirect to the invoice URL
-    function redirectToInvoice() {
-        // Redirect the user to the generateInvoice method in the InvoiceController
-        window.location.href = "<?php echo site_url('invoice/generate'); ?>";
-    }
+  // Function to redirect to the Xendit checkout page
+  function redirectToCheckout() {
+
+  // Replace the following variables with the actual values
+    const externalId = 1234 // Replace with your own external ID for the invoice
+    const amount = getInvoiceAmount(); // Replace with the invoice amount in the smallest currency unit
+
+      // Redirect to the Xendit checkout page with the external ID and amount
+      const checkoutUrl = `https://checkout.xendit.co/start/${externalId}/${amount}`;
+      window.location.href = checkoutUrl;
+   }
+
+   function getInvoiceAmount() {
+    // Replace this with your own logic to retrieve the invoice amount dynamically
+    // You can fetch the amount from the database, API, or any other data source
+    // Here's an example of how you might retrieve the amount using an AJAX request
+    return new Promise((resolve, reject) => {
+        // Make an AJAX request to fetch the invoice amount
+        // Replace 'get_invoice_amount.php' with your actual API endpoint or URL
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'get_checkout.php/data_checkout');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                resolve(response.amount);
+            } else {
+                reject('Failed to retrieve invoice amount');
+            }
+        };
+        xhr.onerror = function() {
+            reject('Failed to retrieve invoice amount');
+        };
+        xhr.send();
+    });
+}
 </script>

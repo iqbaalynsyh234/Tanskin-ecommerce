@@ -14,7 +14,7 @@
     // configuration form elements
     const selectIntegration = document.getElementById('select-integration');
     const selectCountry = document.getElementById('select-country');
-    const buttonStartDemo = document.getElementById('button-start-demo');
+    const buttonStartDemo = document.getElementById('paymentButton');
     const formConfigure = document.getElementById('form-configure');
 
     // modal elements
@@ -69,10 +69,8 @@
         const cartContent = displayedCartDetails.cart.order_items.map(
             (orderItem) => {
                 const {
-                    image,
                     name,
                     quantity,
-                    currency,
                     formatted_price: formattedPrice,
                     formatted_total_amount: formattedTotalAmount
                 } = orderItem;

@@ -169,7 +169,7 @@ By creating an account, you have read, understood &amp; agree to the<a href="#">
 		<div class="col-sm-5 col-md-4 head-checkout wrapside">
 		<div class="box-cart">
 		<div class="box-cart-head">
-			<h1><b>Detail Order</b> ( <span>1</span> item(s) )<small>* All the prices are in IDR</small></h1>
+			<h1><b>Detail Order</b> ( <span>1</span> item(s) )<small>* 12333All the prices are in IDR</small></h1>
 		</div>
 		<div class="box-cart-body">
         <table class="table-item-list">

@@ -101,12 +101,6 @@
             </div>
             </div>
             <div class="form-group">
-            <label class="col-sm-3 col-md-3 control-label">Eksternal Id</label>
-            <div class="col-sm-9 col-md-6">
-                <input type="text" name="external_id" class="form-control" autocomplete="false" placeholder="insert your payment id">
-            </div>
-            </div>
-            <div class="form-group">
             <label class="col-sm-3 col-md-3 control-label">Province</label>
             <div class="col-sm-8 col-md-6">
                 <select class="form-control select2 showprov" name="cprov" onchange="init_getcity(this.value);" style="width: 100%;">
