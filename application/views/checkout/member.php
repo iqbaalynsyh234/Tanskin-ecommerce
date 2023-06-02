@@ -61,13 +61,13 @@
             <div class="form-group">
             <label class="col-sm-3 col-md-3 control-label">Name</label>
             <div class="col-sm-9 col-md-6">
-                <input type="text" name="cname" class="form-control" autocomplete="false">
+                <input type="text" name="cname" class="form-control" autocomplete="false" placeholder="insert your name">
             </div>
             </div>
             <div class="form-group">
             <label class="col-sm-3 col-md-3 control-label">Email</label>
             <div class="col-sm-9 col-md-6">
-                <input type="text" name="cemail" class="form-control" autocomplete="false">
+                <input type="text" name="cemail" class="form-control" autocomplete="false" placeholder="insert your email">
             </div>
             </div>
                 <div class="form-group">
@@ -97,7 +97,13 @@
             <div class="form-group">
             <label class="col-sm-3 col-md-3 control-label">Address</label>
             <div class="col-sm-9 col-md-7">
-                <textarea class="form-control" name="caddress" rows="3"></textarea>
+                <textarea class="form-control" name="caddress" rows="3" placeholder="insert your address"></textarea>
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="col-sm-3 col-md-3 control-label">Eksternal Id</label>
+            <div class="col-sm-9 col-md-6">
+                <input type="text" name="external_id" class="form-control" autocomplete="false" placeholder="insert your payment id">
             </div>
             </div>
             <div class="form-group">

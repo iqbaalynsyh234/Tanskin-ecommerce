@@ -286,20 +286,13 @@ $('body').on('click', '.have-voucher', function(){
 </script>
 
 <script>
-  // Add an event listener to the "Pembayaran" button
-  const paymentButton = document.getElementById('paymentButton');
-  paymentButton.addEventListener('click', redirectToCheckout);
+    // Add an event listener to the "Pembayaran" button
+    const paymentButton = document.getElementById('paymentButton');
+    paymentButton.addEventListener('click', redirectToInvoice);
 
-  // Function to redirect to the Xendit checkout page
-  function redirectToCheckout() {
-    // Replace the following variables with the actual values
-    const externalId = 'YOUR_EXTERNAL_ID'; // Replace with your own external ID for the invoice
-    const amount = 100000; // Replace with the invoice amount in the smallest currency unit
-
-    // Construct the Xendit checkout URL
-    const checkoutUrl = `https://checkout.xendit.co/start/${externalId}?amount=${amount}`;
-
-    // Redirect the user to the Xendit checkout page
-    window.location.href = checkoutUrl;
-  }
+    // Function to redirect to the invoice URL
+    function redirectToInvoice() {
+        // Redirect the user to the generateInvoice method in the InvoiceController
+        window.location.href = "<?php echo site_url('invoice/generate'); ?>";
+    }
 </script>

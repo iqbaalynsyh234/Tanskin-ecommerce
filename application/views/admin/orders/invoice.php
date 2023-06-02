@@ -16,7 +16,8 @@
   <div class="box">
     <div class="box-header with-border">
     <h3 class="box-title">Invoice Label</h3>
-
+       <p>Input External ID: <input type="text" id="external_id" name="external_id"></p>
+		   <p>Input Payer Email: <input type="text" id="payer_email" name="payer_email"></p>
 
     <button style="float: right;" class="btn btn-info" id="print-inv" type="button"><i class="fa fa-print"></i> Print</button>
     </div>

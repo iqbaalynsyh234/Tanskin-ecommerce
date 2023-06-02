@@ -57,3 +57,4 @@ $route['page/(.*)']            = "mainpage/statics/$1";
 $route['blog']                 = "mainpage/blog";
 $route['contact']              = "mainpage/contact";
 $route['admin/barcode']        = "mainpage/barcode";
+$route['invoice/generate']     = 'InvoiceController/generateInvoice';

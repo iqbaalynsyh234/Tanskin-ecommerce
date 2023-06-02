@@ -44,7 +44,7 @@
                 <tr><th colspan="3" height="5px"></th></tr>
 
                 <tr>
-                <th colspan="2" class="text-right">Subtotal</th>
+                <th colspan="2" class="text-right" id="total">Subtotal</th>
                 <th class="text-right"><?php echo rupiah($this->cart->total()); ?></th>
                 </tr>
                 <tr>
@@ -74,6 +74,7 @@
             </tfoot>
         </table>
         </div>
+        <script src="/js/checkout.js"></script>
 <script type="text/javascript">
 $(function(){
 $('body').on('click', '.have-voucher', function(){
