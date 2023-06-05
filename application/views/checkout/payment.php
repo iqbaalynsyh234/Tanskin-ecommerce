@@ -23,10 +23,9 @@
     border: 1px solid #ccc;
 }
 </style>
-
+<form id="payment-form" method="post" action="<?php echo base_url('checkout/getcheckouturl') ?>">
 <div id="my-wrapper-background">
 <div class="container" style="height: 100%;">
-    <form id="payment_midtrans" class="form-horizontal row" action="<?php echo base_url('snap/token') ?>" method="post" style="height: 100%;">
         <div class="col-xs-12 col-sm-7 col-md-8 head-checkout">
 
         <div class="header-checkout">
@@ -121,18 +120,16 @@
         <div class="box-cart-footer">
         <hr>
         <?php if(strtoupper($this->session->userdata('ship_ship')) != "PRICE NOT FOUND.") { ?>
-        <button id="paymentButton" type="button" name="confirm" value="confirm" class="btn btn-info" <?php echo $buybutton ?>>Pembayaran<span class="if-register"></span></button>
+          <button type="submit" name="confirm" value="confirm" class="btn btn-info" <?php echo $buybutton ?>>Pembayaran<span class="if-register"></span></button>
         <?php } ?>
         <a href="controller.php"></a>
         </div>
         </div>
         </div>
-        </form>
 </div>  
 </div>
-<form id="payment-form" method="post" action="<?php echo base_url('snap/finish') ?>">
-    <input type="hidden" name="result_type" id="result-type" value=""></div>
-    <input type="hidden" name="result_data" id="result-data" value=""></div>
+    <input type="hidden" name="amount" id="result-type" value="<?php echo $this->cart->total(); ?>"></"></div>
+    <input type="hidden" name="external_id" id="result-data" value="invoice-16859560511234"></div>
 </form>
 
 <script>
@@ -293,14 +290,25 @@ $('body').on('click', '.have-voucher', function(){
 
   // Function to redirect to the Xendit checkout page
   function redirectToCheckout() {
-
+  
   // Replace the following variables with the actual values
-    const externalId = 1234 // Replace with your own external ID for the invoice
-    const amount = getInvoiceAmount(); // Replace with the invoice amount in the smallest currency unit
+    const externalId = getInvoiceData().externalId; // Replace with your own external ID for the invoice
+    const amount = getInvoiceData().amount;  // Replace with the invoice amount in the smallest currency unit
 
       // Redirect to the Xendit checkout page with the external ID and amount
       const checkoutUrl = `https://checkout.xendit.co/start/${externalId}/${amount}`;
       window.location.href = checkoutUrl;
+   }
+
+   function getInvoiceData() {
+      return fetch('fetch_invoice_data.php')
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => {
+            console.error(error);
+        });
    }
 
    function getInvoiceAmount() {

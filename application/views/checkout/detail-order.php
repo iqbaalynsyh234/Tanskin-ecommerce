@@ -48,7 +48,7 @@
                 <th class="text-right"><?php echo rupiah($this->cart->total()); ?></th>
                 </tr>
                 <tr>
-                <th colspan="2" class="text-right">Shipping</th>
+                <th colspan="2" class="text-right" id="shipping">Shipping</th>
                 <th class="text-right">0</th>
                 </tr>
                 <tr>

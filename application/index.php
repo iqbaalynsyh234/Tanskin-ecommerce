@@ -20,8 +20,8 @@ Xendit::setApiKey("xnd_production_0fe7ZApI47qHxBMYkQZq8r8sGISgzCFhjdInJ3Vma9ZMfg
 $params = [
     "external_id" => "demo_147580196270",
     "payer_email" => "sample_email@xendit.co",
-    "description" => "Tanskin Toner",
-    "amount" => 7000,
+    "description" => "GlowLagen",
+    "amount" => 10000,
 ];
 
 $createInvoice = \Xendit\Invoice::create($params);

@@ -434,6 +434,41 @@ class Checkout extends MY_Controller {
 		}
 	}
 
+	function getcheckouturl(){
+
+		$amount = $this->input->post('amount');
+        $externalId = $this->input->post('external_id');
+        $curl = curl_init();
+
+		curl_setopt_array($curl, array(
+			CURLOPT_URL => 'https://api.xendit.co/v2/invoices',
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => '',
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 0,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => 'POST',
+			CURLOPT_POSTFIELDS =>'{
+				"external_id": "'.$externalId.'",
+				"amount": '.floatval($amount).',
+				"payer_email": "customer@domain.com",
+				"description": "Invoice Demo #123"
+			}',
+		  CURLOPT_USERPWD => 'xnd_production_0fe7ZApI47qHxBMYkQZq8r8sGISgzCFhjdInJ3Vma9ZMfgG4vMTA2lNArdWM3:',
+			CURLOPT_HTTPHEADER => array(
+			  'Content-Type: application/json'
+			),
+		 ));
+		  
+		  $response = curl_exec($curl);
+		  
+		  curl_close($curl);
+		  $responseDecoded = json_decode($response, true);
+          $checkoutUrl =  $responseDecoded['invoice_url'];
+          header('Location: '.$checkoutUrl);
+
+	     }
 	function data_shipping(){
 		if($this->input->post('shipping_page')){
 
