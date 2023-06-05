@@ -9,6 +9,7 @@
   $sql = "SELECT * FROM payment_xendit";
 
  ?>
+ 
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/select2/select2.min.css">
 <style type="text/css">
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -237,7 +238,7 @@ $('body').on('click', '.have-voucher', function(){
 });
 </script>
 
-<!--<?php /*echo setting_value('midtrans_clientkey') */?>-->
+<!-- <?php /*echo setting_value('midtrans_clientkey') */?>
 
 <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js" data-client-key="<?php echo setting_value('midtrans_clientkey') ?>"></script>
 <script type="text/javascript">
@@ -283,7 +284,7 @@ $('body').on('click', '.have-voucher', function(){
       }
     });
   });
-</script>
+</script> -->
 
 <script>
   // Add an event listener to the "Pembayaran" button
@@ -310,7 +311,7 @@ $('body').on('click', '.have-voucher', function(){
         // Make an AJAX request to fetch the invoice amount
         // Replace 'get_invoice_amount.php' with your actual API endpoint or URL
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'get_checkout.php/data_checkout');
+        xhr.open('GET', 'get_Xendit.php/index');
         xhr.onload = function() {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);

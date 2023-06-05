@@ -118,7 +118,7 @@ $sql = "SELECT * FROM payment_xendit";
 		<div class="col-sm-6">
 		<div class="form-group">
             <label>No. Order</label>
-            <input type="number" name="no_order" class="form-control">
+            <input type="number" name="no_order" class="form-control" placeholder="234">
         </div>
         <div class="form-group">
             <label>Email</label>

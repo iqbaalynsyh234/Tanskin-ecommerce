@@ -7,7 +7,7 @@
     }
  ?>
  <div class="box-cart-head">
-            <h1><b>Detail Order </b> ( <span><?php echo $this->cart->total_items() ?></span> item(s) )<small>* 123All the prices are in IDR</small></h1>
+            <h1><b>Detail Order </b> ( <span><?php echo $this->cart->total_items() ?></span> item(s) )<small>* All the prices are in IDR</small></h1>
         </div>
         <div class="box-cart-body">
         <table class="table-item-list">
@@ -44,7 +44,7 @@
                 <tr><th colspan="3" height="5px"></th></tr>
 
                 <tr>
-                <th colspan="2" class="text-right" id="total">Subtotal</th>
+                <th colspan="2" class="text-right" id="sub-total">Subtotal</th>
                 <th class="text-right"><?php echo rupiah($this->cart->total()); ?></th>
                 </tr>
                 <tr>

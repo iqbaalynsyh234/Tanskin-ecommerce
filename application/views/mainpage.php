@@ -30,7 +30,7 @@ Xendit::setApiKey('xnd_public_development_1ioVugjr6NcqAjDWmskmCT0ORycVQwSri48N2F
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $page_title.get_data('store')['title'] ?></title>
 <meta name="author" content="miefta">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 <meta name="keywords" content="<?php echo get_data('store')['meta_keyword'] ?>">
 <meta name="description" content="<?php echo get_data('store')['meta_deskripsi'] ?>">
 
