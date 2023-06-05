@@ -128,7 +128,7 @@
         </div>
 </div>  
 </div>
-    <input type="hidden" name="amount" id="result-type" value="<?php echo $this->cart->total(); ?>"></"></div>
+    <input type="hidden" name="amount" id="result-type" value="<?php echo ($this->cart->total()); ?>"></div>
     <input type="hidden" name="external_id" id="result-data" value="invoice-16859560511234"></div>
 </form>
 

@@ -453,7 +453,7 @@ class Checkout extends MY_Controller {
 				"external_id": "'.$externalId.'",
 				"amount": '.floatval($amount).',
 				"payer_email": "customer@domain.com",
-				"description": "Invoice Demo #123"
+				"description": "tanskin tes"
 			}',
 		  CURLOPT_USERPWD => 'xnd_production_0fe7ZApI47qHxBMYkQZq8r8sGISgzCFhjdInJ3Vma9ZMfgG4vMTA2lNArdWM3:',
 			CURLOPT_HTTPHEADER => array(
