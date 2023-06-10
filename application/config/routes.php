@@ -58,3 +58,5 @@ $route['blog']                 = "mainpage/blog";
 $route['contact']              = "mainpage/contact";
 $route['admin/barcode']        = "mainpage/barcode";
 $route['invoice/generate']     = 'InvoiceController/generateInvoice';
+$route['sitemap.xml']          = 'sitemap';
+$route['robots.txt']           = 'RobotsTxt';

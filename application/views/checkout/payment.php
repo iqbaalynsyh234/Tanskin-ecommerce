@@ -65,7 +65,7 @@
                     $telpon      = $this->session->userdata('cBillPhone');
                     $postcode    = $this->session->userdata('cBillPostcode');
                  } 
-                ?>
+                ?> 
                 <p><b><?php echo $namakrirm.' - (62+) '.$telpon; ?></b></p>
                 <p><?php echo $alamatkirim; ?><br>
                 <?php echo ucwords(strtolower($shipaddres->desa)).', '.ucwords(strtolower($shipaddres->kecamatan)).', '.ucwords(strtolower($shipaddres->kabupaten)).'<br>'.ucwords(strtolower($shipaddres->propinsi)).', '.$postcode.'<br></p>'; ?>
@@ -104,7 +104,7 @@
         </div>
         </div>
             
-        <a href="<?php echo base_url().'checkout/shipping_method' ?>"><i class="fa fa-angle-left"></i> Back </a>
+        <a href="<?php echo base_url().'checkout/shipping_method' ?>"><i class="fa fa-angle-left"></i> Back</a>
         </div>
         </div>
 
@@ -129,7 +129,7 @@
 </div>  
 </div>
     <input type="hidden" name="amount" id="result-type" value="<?php echo ($this->cart->total()); ?>"></div>
-    <input type="hidden" name="external_id" id="result-data" value="invoice-16859560511234"></div>
+    <input type="hidden" name="external_id" id="result-data" value="invoice-tanskin-16859560511234"></div>
 </form>
 
 <script>

@@ -122,7 +122,7 @@
 		  	</table>
 		  </div>
 		  <div class="box-footer text-right">
-		  	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_product">Tambah</button>
+		  	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_product">Tambah123</button>
 		  </div>
 
 		</div>

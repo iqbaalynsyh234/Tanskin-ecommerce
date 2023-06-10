@@ -59,8 +59,6 @@
 	            </div>
 			    </div>
 
-
-
 			    <div class="col-sm-6 col-pad">
 			    <div class="form-group">
 	            <label class="control-label">Kota / Kabupaten</label>
@@ -179,8 +177,8 @@
 		</div>
 	</div>
 
-</div>
-</section>
+ </div>
+ </section>
 
 
 <div class="modal fade" id="modal_product" tabindex="-1" role="dialog" aria-labelledby="modal_productLabel">

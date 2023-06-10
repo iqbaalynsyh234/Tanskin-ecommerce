@@ -87,8 +87,6 @@ if($this->uri->segment(1) == 'checkout'){
         <li><a href="<?php echo base_url('contact') ?>" class="nav-item text-uppercase"><span>Contact</span></a></li>
         <li><a href="<?php echo base_url('page/skin-test') ?>" class="nav-item text-uppercase"><span>SKIN TEST</span></a></li>
         <li><a href="<?php echo base_url('page/marketplace') ?>" class="nav-item text-uppercase"><span>Marketplace</span></a></li>
-        <li><a href="https://blog.tanskin.id/" target="_blank" class="nav-item text-uppercase"><span>Blog</span></a></li>
-        <li><a href="https://blog.tanskin.id/" target="_blank" class="nav-item text-uppercase"><span>Tes Product</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="search-icon-nav"><i class="far fa-search"></i></li>

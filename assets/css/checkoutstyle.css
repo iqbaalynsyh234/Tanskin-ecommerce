@@ -45,7 +45,7 @@ a:focus, a:hover {
 -moz-box-shadow: -6px 2px 8px -5px rgba(152, 152, 152, 0.5);
 box-shadow: -6px 2px 8px -5px rgba(152, 152, 152, 0.5); */
     z-index: 1;
-    padding-bottom: 80px;
+    padding-bottom: 300px;
 }
 /* .wrapside:after{
 	position: absolute;

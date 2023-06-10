@@ -78,7 +78,7 @@ class Model_import extends CI_Model{
 		return $query;
 	}
 
-	public function cek_customer($name = '', $phone, $address = '', $template){
+	public function cek_customer($name = 'name', $phone, $address = 'address', $template){
 		$customer = $this->db->get_where('customer', array('phone' => $phone, 'kategori' => $template));
 		if($customer->num_rows() == 0){
 			$data = array(
